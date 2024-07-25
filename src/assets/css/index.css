@@ -1,0 +1,125 @@
+/* font */
+@font-face {
+  font-family: 'JK Abode';
+  src: url('../../assets/font/JKAbode-Demo.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'JK Abode Light';
+  src: url('../../assets/font/JKAbode-LightDemo.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('../../assets/font/NotoSansKR-Medium.otf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Sagak Sagak';
+  src: url('../../assets/font/Sagak-sagak.otf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'FS Sinclair';
+  src: url('../../assets/font/FSSinclairBoldItalic.otf') format('truetype');
+  font-weight: normal;
+}
+
+/* common */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* header */
+.header {
+  max-height: 5rem;
+  padding: 2rem 5%;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2.5px solid #fce8b5;
+}
+
+.header img {
+  max-width: 3rem;
+}
+
+.header .logo {
+  font-size: 1.8rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #c5423a;
+  font-family: FS Sinclair, 'Source Sans Pro';
+  text-decoration: none;
+}
+
+.header .menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: #2a2630;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Sagak Sagak, 'Source Sans Pro';
+}
+
+.active-tab-indicator {
+  border: 1.5px solid #0f86ef;
+  border-radius: 8px;
+}
