@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Navigation = ({ index, children }) => {
-  const path = useSelector((state) => state.menu.path);
+  const path = useSelector((state) => state.menu.path); //redux path
+  const menu = useSelector((state) => state.menu.menu); //redux menu
 
   const setMenu = index < 3;
   const yourmoodInstaUrl =
@@ -16,6 +17,15 @@ const Navigation = ({ index, children }) => {
 
   return (
     <>
+      <nav>
+        <ul>
+          {menu.map((item, index) => (
+            <Navigation key={item} index={index} selected>
+              {item}
+            </Navigation>
+          ))}
+        </ul>
+      </nav>
       {setMenu && (
         <Link to={path[index]}>
           <motion.li
