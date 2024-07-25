@@ -1,47 +1,43 @@
+import { Mobile, PC } from '@/hooks/useResponse.jsx';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
 
-import cityImg from '../../assets/city.jpg';
-import heroImg from '../../assets/hero.png';
+import Navigation from '@/components/header/Navigation.jsx';
+import Logo from '@/assets/images/Logo.jpg';
 
 const MainHeader = () => {
-  const { scrollY } = useScroll();
-
-  const yCity = useTransform(scrollY, [0, 200], [0, -100]);
-  const opacityCity = useTransform(
-    scrollY,
-    [0, 200, 300, 500],
-    [1, 0.5, 0.4, 0]
-  );
-  const yHero = useTransform(scrollY, [0, 200], [0, -150]);
-  const opacityHero = useTransform(scrollY, [0, 300, 500], [1, 1, 0]);
-  const yText = useTransform(scrollY, [0, 200, 300, 500], [0, 50, 50, 300]);
-  const scaleText = useTransform(scrollY, [0, 300], [1, 1.5]);
+  const menu = useSelector((state) => state.menu.menu);
 
   return (
-    <header id="welcome-header">
-      <motion.div
-        id="welcome-header-content"
-        style={{ scale: scaleText, y: yText }}
-      >
-        <h1>Ready for a challenge?</h1>
-        <Link id="cta-link" to="/challenges">
-          Get Started
-        </Link>
-      </motion.div>
-      <motion.img
-        style={{ opacity: opacityCity, y: yCity }}
-        src={cityImg}
-        alt="A city skyline touched by sunlight"
-        id="city-image"
-      />
-      <motion.img
-        style={{ opacity: opacityHero, y: yHero }}
-        src={heroImg}
-        alt="A superhero wearing a cape"
-        id="hero-image"
-      />
-    </header>
+    <>
+      <PC>
+        <header className="header">
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <motion.h1
+              className="logo"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 200 }}
+            >
+              <img src={Logo} alt="Logo Img" />
+              YourMood
+            </motion.h1>
+          </Link>
+          <nav>
+            <ul>
+              {menu.map((item, index) => (
+                <Navigation key={item} index={index} selected>
+                  {item}
+                </Navigation>
+              ))}
+            </ul>
+          </nav>
+        </header>
+      </PC>
+      <Mobile>
+        <p>모바일 입니다 ..</p>
+      </Mobile>
+    </>
   );
 };
 
