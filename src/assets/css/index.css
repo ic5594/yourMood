@@ -136,10 +136,15 @@ a {
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 1.8rem; /* 아이콘 크기 조정 */
+  font-weight: 900;
 }
 .swiper-button-prev,
 .swiper-button-next {
   color: rgb(197, 66, 58);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(197, 66, 58);
 }
 
 /* header */
