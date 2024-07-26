@@ -133,6 +133,15 @@ a {
   object-fit: cover;
 }
 
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.8rem; /* 아이콘 크기 조정 */
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgb(197, 66, 58);
+}
+
 /* header */
 .main_header {
   position: sticky;
@@ -161,7 +170,7 @@ a {
 }
 
 .header .logo {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -234,7 +243,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.29);
   margin: 15px 0;
   display: inline-block;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   padding: 3%;
 }
 
@@ -280,7 +289,7 @@ a {
 
 .footer_area .info {
   font-family: Juri_Handle_normal, 'Source Sans Pro';
-  font-size: 1.4fr_viewrem;
+  font-size: 1.15rem;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
