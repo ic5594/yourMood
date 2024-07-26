@@ -1,14 +1,28 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { LuMenuSquare } from 'react-icons/lu';
 
 import Logo from '@/assets/images/Logo.jpg';
+import { useState } from 'react';
+import Navbar from '../UI/Navbar';
 
 const MainHeader = () => {
-  const handleMenuOpen = () => {};
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
+  const handleMenuOpen = () => {
+    setNavbarOpen(true);
+  };
+
+  const handleDone = () => {
+    console.log('done');
+    setNavbarOpen(false);
+  };
 
   return (
     <>
+      <AnimatePresence>
+        {navbarOpen && <Navbar onDone={handleDone} />}
+      </AnimatePresence>
       <header className="header">
         <Link to="/" style={{ textDecoration: 'none' }}>
           <motion.h1
