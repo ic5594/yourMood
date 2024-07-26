@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import MainHeader from '../components/header/MainHeader.jsx';
+import MainHeader from '@/components/header/MainHeader.jsx';
+import MainFooter from '@/components/footer/MainFooter.jsx';
 
 export default function WelcomePage() {
   return (
@@ -9,6 +10,7 @@ export default function WelcomePage() {
         <main id="welcome-content">
           <Outlet />
         </main>
+        <MainFooter />
       </div>
     </div>
   );
