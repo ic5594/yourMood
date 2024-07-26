@@ -65,7 +65,8 @@ a {
 
 .app {
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+  display: flex;
 }
 
 .app_home {

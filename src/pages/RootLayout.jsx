@@ -1,17 +1,18 @@
-import { Outlet } from 'react-router-dom';
-import MainHeader from '@/components/header/MainHeader.jsx';
-import MainFooter from '@/components/footer/MainFooter.jsx';
+import { PC, Mobile } from '@/hooks/useResponse.jsx';
+
+import Fixation from '@/pages/Fixation.jsx';
+import PcPage from '@/pages/PcPage';
 
 export default function WelcomePage() {
   return (
     <div className="app">
-      <div className="app_home">
-        <MainHeader />
-        <main id="welcome-content">
-          <Outlet />
-        </main>
-        <MainFooter />
-      </div>
+      <PC>
+        <PcPage />
+        <Fixation />
+      </PC>
+      <Mobile>
+        <Fixation />
+      </Mobile>
     </div>
   );
 }
