@@ -5,6 +5,7 @@ import MainFooter from '@/components/footer/MainFooter.jsx';
 const Fixation = () => {
   return (
     <div className="app_home">
+      <div id="navbar"></div>
       <MainHeader />
       <main id="welcome-content">
         <Outlet />

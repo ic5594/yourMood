@@ -1,5 +1,3 @@
-import { createPortal } from 'react-dom';
-
 import Modal from '@/components/UI/Modal.jsx';
 
 const Navbar = ({ onDone }) => {
@@ -7,7 +5,7 @@ const Navbar = ({ onDone }) => {
     onDone();
   };
 
-  return createPortal(
+  return (
     <>
       <Modal onClose={onDone}>
         <form onSubmit={handleSumbit}>
@@ -17,8 +15,7 @@ const Navbar = ({ onDone }) => {
           </button>
         </form>
       </Modal>
-    </>,
-    document.getElementById('navbar')
+    </>
   );
 };
 export default Navbar;
