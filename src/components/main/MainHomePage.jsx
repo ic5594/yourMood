@@ -8,6 +8,7 @@ import MainImg3 from '@/assets/images/main_img3.jpg';
 import MainImg4 from '@/assets/images/main_img4.jpg';
 import MainImg5 from '@/assets/images/main_img5.jpg';
 import MainImg6 from '@/assets/images/main_img6.jpg';
+import MainImg7 from '@/assets/images/main_img7.jpg';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -23,6 +24,7 @@ const MainHomePage = () => {
     MainImg4,
     MainImg5,
     MainImg6,
+    MainImg7,
   ];
 
   return (
