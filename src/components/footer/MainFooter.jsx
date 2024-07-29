@@ -29,7 +29,7 @@ const MainFooter = () => {
             onClick={() => window.open(instargram)}
             style={{ wordBreak: 'break-all' }}
           >
-            <strong>Instargram</strong> {instargram}
+            <strong>Instagram</strong> {instargram}
           </p>
         </div>
       </div>
