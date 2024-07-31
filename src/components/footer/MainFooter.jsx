@@ -8,8 +8,7 @@ const MainFooter = () => {
     <footer>
       <div className="footer_area">
         <div className="logo">
-          <img src={Logo} alt="main logo" />
-          Yourmood
+          <img src={Logo} alt="main logo" /> &nbsp;Yourmood
         </div>
         <div className="info">
           <p>
