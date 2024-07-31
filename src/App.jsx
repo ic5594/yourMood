@@ -1,11 +1,13 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { lazy } from 'react';
 
-import RootLayout from '@/pages/RootLayout.jsx';
 import NotFound from '@/pages/NotFound.jsx';
 import MainHomePage from '@/components/main/MainHomePage.jsx';
 import Introduction from '@/pages/introduction/Introduction.jsx';
 import Menu from '@/pages/menu/Menu';
 import WayMap from '@/pages/waymap/WayMap';
+
+const RootLayout = lazy(() => import('@/pages/RootLayout.jsx'));
 
 const router = createBrowserRouter([
   {
