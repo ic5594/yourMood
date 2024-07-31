@@ -1,15 +1,10 @@
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import useSetMenu from '@/hooks/useSetMenu.js';
 
-const Navigation = ({ index, children }) => {
-  const path = useSelector((state) => state.menu.path); //redux path
-
-  const setMenu = index < 3;
-  const yourmoodInstaUrl =
-    'https://www.instagram.com/cafeyourmood/p/Ct23jDKvaV9/?img_index=1';
-
-  const yourmoodKakaoCh = 'https://pf.kakao.com/_DnRlxj';
+const Navigation = ({ index, item, children }) => {
+  const { path, setMenu, yourmoodInstaUrl, yourmoodKakaoCh } =
+    useSetMenu(index);
 
   const initMotion = {
     whileHover: { scale: 1.1 },
@@ -31,13 +26,13 @@ const Navigation = ({ index, children }) => {
         </Link>
       )}
       {!setMenu && (
-        <a href="javascript: void(0)">
+        <a>
           <motion.li
             className="menu"
             whileHover={initMotion.whileHover}
             transition={initMotion.transition}
             onClick={() =>
-              window.open(index === 2 ? yourmoodInstaUrl : yourmoodKakaoCh)
+              window.open(item === 'insta' ? yourmoodInstaUrl : yourmoodKakaoCh)
             }
           >
             {children}

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Logo from '@/assets/images/Logo.jpg';
-import Navbar from '@/components/UI/Navbar';
+import Navbar from '@/components/header/Navbar.jsx';
 import Navigation from './Navigation';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -22,7 +22,6 @@ const MainHeader = () => {
   };
 
   const handleDone = () => {
-    console.log('done');
     setNavbarOpen(false);
   };
 
@@ -59,7 +58,7 @@ const MainHeader = () => {
               >
                 {menu.map((item, index) => (
                   <SwiperSlide key={item}>
-                    <Navigation index={index} selected>
+                    <Navigation index={index} item={item}>
                       {item}
                     </Navigation>
                   </SwiperSlide>
